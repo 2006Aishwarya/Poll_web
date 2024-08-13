@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Poll - ZapVote</title>
+    <link rel="stylesheet" href="create_poll.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#" class="brand">ZapVote</a>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="signup_page.html">Sign in</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Create a Poll</h1>
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Type your question here">
+            </div>
+            <div class="form-group">
+                <label for="description" onclick="open_sidebox()">Description</label>
+                <input type="text" id="description" name="description" placeholder="Add description or image">
+            </div>
+            <div class="form-group">
+                <label for="poll-type">Poll type</label>
+                <select id="poll-type" name="poll-type">
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="image-choice">Image choice</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Answer Options</label>
+                <div id="options-container">
+                    <div class="option-item">
+                        <input type="text" name="option1" placeholder="Option 1">
+                        <button type="button" class="remove-option">X</button>
+                    </div>
+                    <div class="option-item">
+                        <input type="text" name="option2" placeholder="Option 2">
+                        <button type="button" class="remove-option">X</button>
+                    </div>
+                </div>
+                <button type="button" id="add-option">Add another option</button>
+            </div>
+            <div class="form-group">
+                <label><span style="font-size: larger;">Settings</span></label>
+                <div class="setting-item">
+                    <input type="checkbox" id="multiple-options" name="multiple-options">
+                    <label for="multiple-options">Allow selection of multiple options</label>
+                    <label for="multiple-options" class="toggle-button"></label>
+                </div>
+                <div id="multiple-options-settings" style="display: none;">
+                    <label for="multiple-options-choice">Choose:</label>
+                    <select id="multiple-options-choice" name="multiple-options-choice">
+                        <option value="unlimited">Unlimited</option>
+                        <option value="exact">Exact Range</option>
+                        <option value="range">Range</option>
+                    </select>
+                    <div id="range-settings" style="display: none;">
+                        <label for="range-min">Min:</label>
+                        <input type="number" id="range-min" name="range-min" placeholder="Min">
+                        <label for="range-max">Max:</label>
+                        <input type="number" id="range-max" name="range-max" placeholder="Max">
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <input type="checkbox" id="require-names" name="require-names">
+                    <label for="require-names">Require participants' names</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Voting security</label>
+                <input type="checkbox" id="voting-security-toggle" name="voting-security-toggle">
+                <label for="voting-security-toggle" class="toggle-button"></label>
+                <select id="voting-security" name="voting-security" style="display: none;">
+                    <option value="ip-address">One vote per IP address</option>
+                    <option value="account">One vote per account</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Advanced Settings</label>
+                <div class="setting-item">
+                    <input type="checkbox" id="close-poll" name="close-poll">
+                    <label for="close-poll">Close poll on a scheduled date</label>
+                </div>
+                <div class="setting-item">
+                    <input type="checkbox" id="hide-share-button" name="hide-share-button">
+                    <label for="hide-share-button">Hide share button</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="results-visibility">Results visibility</label>
+                <input type="checkbox" id="results-visibility-toggle" name="results-visibility-toggle">
+                <label for="results-visibility-toggle" class="toggle-button"></label>
+                <select id="results-visibility" name="results-visibility" style="display: none;">
+                    <option value="always-public">Always public</option>
+                    <option value="after-voting">After voting</option>
+                    <option value="never-public">Never public</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit-vote-permissions">Edit vote permissions</label>
+                <input type="checkbox" id="edit-vote-permissions-toggle" name="edit-vote-permissions-toggle">
+                <label for="edit-vote-permissions-toggle" class="toggle-button"></label>
+                <select id="edit-vote-permissions" name="edit-vote-permissions" style="display: none;">
+                    <option value="nobody">Nobody</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="create-poll-button">Create poll</button>
+        </form>
+    </div>
+
+    <script src="create_poll.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+/* File: create_poll.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.create-poll-button {
+    width: 100%;
+    background-color: #6c63ff;
+}
+
+.create-poll-button:hover {
+    background-color: #5b52e6;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.option-item input {
+    flex-grow: 1;
+    margin-right: 8px;
+}
+
+.remove-option {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* Custom toggle button style */
+.toggle-button {
+    background-color: #d2d2d2;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+    display: inline-block;
+    margin-left:auto;
+}
+
+.toggle-button::before {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.2s;
+}
+.navbar {
+    width: 100%;
+    background-color: #20096d; /* Blue background color */
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white; /* Text color for links */
+    font-weight: bold;
+    font-size: 18px;
+    padding: 14px 20px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.navbar a:hover {
+    color: #ddd; /* Hover color */
+}
+
+.navbar .brand {
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.content {
+    padding: 20px;
+}
+input[type="checkbox"]:checked + .toggle-button {
+    background-color: #20096d; /* Blue color when toggled */
+}
+
+input[type="checkbox"]:checked + .toggle-button::before {
+    transform: translateX(20px);
+}
+input[type="checkbox"] {
+    display: none; 
+}

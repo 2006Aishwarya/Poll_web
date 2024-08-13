@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Poll</title>
+    <link rel="stylesheet" href="create_poll.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Poll</h1>
+        <p style="font-size: 0.9em; color: #555;">Complete the below fields to create your poll</p>
+        <form>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Type your question here">
+            </div>
+            <div class="form-group">
+                <label for="description-label" onclick="toggleDescription()">Description</label>
+                <input type="text" id="description-label" placeholder="Click to add a description or image">
+                <textarea id="description" name="description" placeholder="Add description here..." style="display:none;"></textarea>
+                <button type="button" id="add-image" style="display:none;">Add Image</button>
+            </div>
+            <div class="form-group">
+                <label for="poll-type">Poll type</label>
+                <select id="poll-type" name="poll-type">
+                    <option value="multiple-choice">Multiple choice</option>
+                    <option value="image-poll">Image poll</option>
+                </select>
+            </div>
+            <div class="form-group" id="image-poll-container" style="display: none;">
+                <label for="image-upload">Upload Images</label>
+                <div id="image-upload-container">
+                    <input type="file" id="image-upload" name="image-upload" accept="image/*">
+                    <input type="text" id="image-label" name="image-label" placeholder="Label">
+                </div>
+                <button type="button" id="add-image-option">Add another image</button>
+            </div>
+            <div class="form-group">
+                <label>Answer Options</label>
+                <div id="options-container">
+                    <input type="text" name="option1" placeholder="Option 1">
+                    <input type="text" name="option2" placeholder="Option 2">
+                </div>
+                <button type="button" id="add-option">Add another option</button>
+            </div>
+            <div class="form-group">
+                <label>Settings</label>
+                <div class="setting-item">
+                    <input type="checkbox" id="multiple-options" name="multiple-options">
+                    <label for="multiple-options">Allow selection of multiple options</label>
+                </div>
+                <div id="multiple-options-settings" style="display: none;">
+                    <label for="multiple-options-choice">Choose:</label>
+                    <select id="multiple-options-choice" name="multiple-options-choice">
+                        <option value="unlimited">Unlimited</option>
+                        <option value="exact">Exact Number</option>
+                        <option value="range">Range</option>
+                    </select>
+                    <div id="exact-settings" style="display: none;">
+                        <label for="exact-number">Number:</label>
+                        <input type="number" id="exact-number" name="exact-number" placeholder="Number">
+                    </div>
+                    <div id="range-settings" style="display: none;">
+                        <label for="range-min">Min:</label>
+                        <input type="number" id="range-min" name="range-min" placeholder="Min">
+                        <label for="range-max">Max:</label>
+                        <input type="number" id="range-max" name="range-max" placeholder="Max">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Voting security</label>
+                <select id="voting-security" name="voting-security">
+                    <option value="ip-address">One vote per IP address</option>
+                    <option value="account">One vote per account</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="setting-item">
+                    <input type="checkbox" id="use-recaptcha" name="use-recaptcha">
+                    <label for="use-recaptcha">Use reCAPTCHA</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="dropdown-button" onclick="toggleAdvancedSettings()">Show Advanced Settings</button>
+                <div id="advanced-settings" style="display: none;">
+                    <div class="setting-item">
+                        <input type="checkbox" id="schedule-poll" name="schedule-poll" onclick="toggleScheduleSettings()">
+                        <label for="schedule-poll">Schedule poll</label>
+                    </div>
+                    <div id="schedule-settings" style="display: none;">
+                        <label for="poll-date">Date:</label>
+                        <input type="date" id="poll-date" name="poll-date">
+                        <label for="poll-time">Time:</label>
+                        <input type="time" id="poll-time" name="poll-time">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="results-visibility">Results visibility</label>
+                <select id="results-visibility" name="results-visibility">
+                    <option value="always-public">Always public</option>
+                    <option value="after-voting">After voting</option>
+                    <option value="never-public">Never public</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edit-vote-permissions">Edit vote permissions</label>
+                <select id="edit-vote-permissions" name="edit-vote-permissions">
+                    <option value="nobody">Nobody</option>
+                    <option value="somebody">Somebody</option>
+                </select>
+            </div>
+            <button type="submit" class="create-poll-button">Create poll</button>
+        </form>
+    </div>
+
+    <script src="sample.js"></script>
+</body>
+</html>
